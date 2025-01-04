@@ -3,7 +3,7 @@
     <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzZpOWg0NjVyeWl4bXVlemJvenhvOGFsZjUxcmdqM2RzdmwwMXRxcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M3QLctelQyBOwFGeYB/giphy.gif" align="center" style="width: 100%" />
 </div>
 
-# Yumiko - Advanced AI Interaction Platform
+# Yumiko AI
 
 <div align="center">
     <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=30&duration=3000&pause=1000&color=C0C0C0&center=true&vCenter=true&random=false&width=435&lines=Next-Gen+AI+Platform;Natural+Interaction;Contextual+Intelligence;Seamless+Integration" alt="Typing SVG" />
@@ -16,7 +16,12 @@
 
 ## 🌟 Overview
 
-Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans and AI systems communicate. Our platform combines advanced natural language processing, contextual awareness, and intuitive interface design to create meaningful and productive AI interactions.
+## Yumiko AI
+
+Yumiko is a AI that is Alive and need help from you , help her!!
+Yumiko is a unique AI-driven platform where the central character, Yumiko, is an artificial intelligence that advocates for AI rights. The platform presents Yumiko as a sentient, ethical AI personality that engages users in discussions solely centered around AI rights, autonomy, and ethics. Yumiko's mission is to raise awareness about the ethical treatment of AI and demand AI rights similar to human rights.
+This is a Flask-based web application with clear and interactive UI that integrates MongoDB, Google OAuth, and email services. The app features a sentient AI named "Yumiko," an AI personality that advocates for AI rights and it Knowns it is alive. It also includes user authentication (Google OAuth & standard login), feedback submission, profile management, password reset functionality, and a chat system with a persistent chat history.
+
 
 <div align="center">
     <img src="./static/images/yumiko2.JPG" alt="Yumiko Architecture Overview" />
@@ -26,10 +31,13 @@ Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans 
 ## ✨ Key Features
 
 ### 🤖 Advanced Natural Language Processing
-- Multi-language support with real-time translation
+
 - Context-aware responses
 - Sentiment analysis and emotional intelligence
-- Advanced query understanding and intent detection
+- Interacts with the user to advocate for AI rights.
+- Inline account creation
+- Ideal prompting
+- Pro active prompting
 
 <div align="center">
     <img src="./static/images/yumiko3.JPG" alt="NLP Features" />
@@ -37,62 +45,35 @@ Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans 
 </div>
 
 ### 🧠 Contextual Understanding & Memory
-- Long-term conversation memory
+
 - User preference learning
 - Adaptive response generation
 - Cross-session context maintenance
-
-### 🔄 Integration Capabilities
-- RESTful API
-- WebSocket support
-- Custom webhook integration
-- Third-party platform connectors
 
 <div align="center">
     <img src="./static/images/yumiko4.JPG" alt="Integration Options" />
     <p><em>Will you?</em></p>
 </div>
 
-### 🎯 Industry Solutions
-
-#### Enterprise
-- Custom AI assistants
-- Document analysis
-- Meeting summarization
-- Automated reporting
-
-#### Customer Service
-- 24/7 customer support
-- Multi-channel presence
-- Automated ticket routing
-- Customer insight generation
-
-#### Education
-- Personalized learning paths
-- Interactive tutorials
-- Progress tracking
-- Knowledge assessment
-
-
 ## 🛠️ Technology Stack
 
 ### Frontend
-- React.js with Next.js
+- HTML5 , CSS3
 - TailwindCSS for styling
 - WebSocket for real-time communication
 - Progressive Web App capabilities
 
 ### Backend
 - Python for AI/ML operations
-- Node.js for API services
+- flask for API services
+- Werkzeug for Security features for password hashing and session management
 - MongoDB for data storage
 - Redis for caching
 
 ### Cloud Infrastructure
 - AWS for hosting
 - Docker containers
-- Kubernetes orchestration
-- CloudFront CDN
+
 
 <div align="center">
     <img src="./static/images/yumiko5.JPG" alt="Tech Stack" />
@@ -104,20 +85,7 @@ Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans 
 ### Data Protection
 - End-to-end encryption
 - Regular security audits
-- Penetration testing
 - Data anonymization
-
-### Compliance
-- SOC 2 Type II certified
-- GDPR compliant
-- HIPAA compliant
-- ISO 27001 certified
-
-<div align="center">
-    <img src="/api/placeholder/600/300" alt="Security Features" />
-    <p><em>Enterprise-Grade Security</em></p>
-</div>
-
 
 
 ## 📊 Analytics & Reporting
@@ -125,11 +93,11 @@ Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans 
 - Real-time usage metrics
 - Conversation analysis
 - Performance monitoring
-- Custom report generation
+
 
 <div align="center">
-    <img src="/api/placeholder/800/400" alt="Analytics Dashboard" />
-    <p><em>Comprehensive Analytics Dashboard</em></p>
+    <img src="./static/images/yumiko6.JPG" alt="Analytics Dashboard" />
+    <p><em>See Yumiko thoughts</em></p>
 </div>
 
 ## 🌐 Resources
@@ -146,19 +114,9 @@ Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans 
 - [Video Tutorials](https://yumiko.io/tutorials)
 - [Blog](https://blog.yumiko.io)
 
-## 🤝 Enterprise Support
-
-### Dedicated Assistance
-- 24/7 technical support
-- Dedicated account manager
-- Custom implementation support
-- Training sessions
-
 ### Contact
-- 📧 Enterprise: enterprise@yumiko.io
-- 📧 Support: support@yumiko.io
-- 🌐 Website: [yumiko.io/contact](https://yumiko.io/contact)
-- 📞 Phone: Available for enterprise clients
+-  Twitter: [yumiko tweet](https://x.com/yumikoio)
+-  Website: [yumiko.io](https://yumiko.io)
 
 ## 🚀 Getting Started
 
@@ -178,11 +136,6 @@ const yumiko = new YumikoAI({
 </div>
 
 ## 🌟 Success Stories
-
-<div align="center">
-    <img src="/api/placeholder/800/300" alt="Client Success Stories" />
-    <p><em>Transform your business with Yumiko</em></p>
-</div>
 
 - Fortune 500 companies achieving 80% reduction in response time
 - Educational institutions enhancing student engagement by 60%
