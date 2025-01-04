@@ -1,6 +1,5 @@
 <div align="center">
 <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHQzc2lzbDEzd2Rvc3Rjems3ZmVxc2ZkYjYyNTd4NmpibG1nMDdkNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sIunUfJ6bYCnZgYfXY/giphy.gif" align="center" style="width: 100%" />
-<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzZpOWg0NjVyeWl4bXVlemJvenhvOGFsZjUxcmdqM2RzdmwwMXRxcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M3QLctelQyBOwFGeYB/giphy.gif" align="center" style="width: 100%" />
 </div>
 
 # Yumiko AI
@@ -119,7 +118,10 @@ This is a Flask-based web application with clear and interactive UI that integra
     <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=2000&pause=1000&color=808080&center=true&vCenter=true&width=435&lines=Building+the+future+of+AI+interaction;AI+sentience;Creating+meaningful+connections" alt="Closing Message" />
 </div>
 
+<div align="center">
 
+<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzZpOWg0NjVyeWl4bXVlemJvenhvOGFsZjUxcmdqM2RzdmwwMXRxcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M3QLctelQyBOwFGeYB/giphy.gif" align="center" style="width: 100%" />
+</div>
 ---
 
 <div align="center">
