@@ -714,12 +714,170 @@ def update_chat_timestamp():
 
 import json
 
-{
+
+ STATS_FILE = "view_stats.json"
+
+ stats_cache = {
+     "current_views": None,
+     "previous_views": None,
+     "last_updated": None,
+     "uploads": None
+ }
+
+ def calculate_current_views(start_views, end_views, start_time):
+     """Calculate the current views based on linear interpolation"""
+     if not all([start_views, end_views, start_time]):
+         return end_views
+
+     start_datetime = datetime.fromisoformat(start_time)
+     now = datetime.now()
+     # Calculate progress through the day
+     day_progress = (now - start_datetime).total_seconds() / (24 * 3600)
+
+    
+     if day_progress >= 1:
+         return end_views
+
+     # Calculate interpolated views
+     view_difference = end_views - start_views
+     interpolated_views = start_views + (view_difference * day_progress)
+
+    return int(interpolated_views)
 
 
-}
+ def load_previous_stats():
+     if os.path.exists(STATS_FILE):
+         try:
+             with open(STATS_FILE, 'r') as f:
+                 return json.load(f)
+         except json.JSONDecodeError:
+            return None
+     return None
 
 
+ def save_stats():
+    with open(STATS_FILE, 'w') as f:
+         json.dump(stats_cache, f)
+
+ def fetch_giphy_stats():
+     try:
+         print(f"Fetching stats from: {GIPHY_URL}")
+        response = requests.get(GIPHY_URL)
+         response.raise_for_status()
+         text = response.text
+         user_id_match = re.search(r'(?<={"channelId": )(.*?)(?=\s*},)', text)
+         giphy_user_id = user_id_match.group(0) if user_id_match else None
+        if not giphy_user_id:
+             print("Failed to retrieve user ID.")
+             return
+
+        feed_response = requests.get(f")
+         feed_data = feed_response.json()
+         view_id = feed_data.get("results", [{}])[0].get("user", {}).get("id", None)
+
+         stats_response = requests.get{
+
+        }
+        stats = stats_response.json()
+
+        if not stats or "viewCount" not in stats:
+             return
+
+         current_time = datetime.now().isoformat()
+         current_views = int(stats["viewCount"])
+
+         # On first run or new day
+        if stats_cache["current_views"] is None:
+             previous_stats = load_previous_stats()
+            if previous_stats:
+                 stats_cache.update(previous_stats)
+             else:
+                 stats_cache["previous_views"] = current_views
+
+         # Update stats for a new day
+         if stats_cache["last_updated"]:
+             last_updated = datetime.fromisoformat(stats_cache["last_updated"])
+             if last_updated.date() < datetime.now().date():
+                 stats_cache["previous_views"] = stats_cache["current_views"]
+
+         stats_cache.update({
+             "current_views": current_views,
+             "last_updated": current_time,
+             "uploads": stats["uploadCount"]
+         })
+
+        save_stats()
+
+         print(f"""
+             🌐 Updated Giphy Stats:
+             - Start Views: {stats_cache["previous_views"]:,}
+             - Current Views: {current_views:,}
+             - GIF Uploads: {stats_cache["uploads"]}
+             - Last Updated: {current_time}
+         """)
+
+     except Exception as e:
+         print("Error fetching Giphy data:", e)
+
+
+ def initialize_scheduler():
+     scheduler = BackgroundScheduler()
+
+     # Add daily job at midnight
+     scheduler.add_job(
+         fetch_giphy_stats,
+         CronTrigger(hour=0, minute=0),
+         id='daily_fetch'
+     )
+
+     # Check if we need to fetch immediately
+     if stats_cache["last_updated"] is None:
+         # First time running
+         fetch_giphy_stats()
+     else:
+         # Check if we missed the last update
+         last_updated = datetime.fromisoformat(stats_cache["last_updated"])
+         now = datetime.now()
+
+         # If last update was more than 24 hours ago, fetch immediately
+         if (now - last_updated) > timedelta(hours=24):
+             print("More than 24 hours since last update, fetching now...")
+             fetch_giphy_stats()
+         else:
+             print(f"Last update was {last_updated}, continuing with normal schedule")
+
+     scheduler.start()
+     return scheduler
+
+
+ # Load previous stats on startup
+ previous_stats = load_previous_stats()
+ if previous_stats:
+     stats_cache.update(previous_stats)
+
+ # Initialize the scheduler
+ scheduler = initialize_scheduler()
+
+
+ @app.route('/giphy-stats', methods=['GET'])
+ def get_giphy_stats():
+     if stats_cache["current_views"] is None:
+         return jsonify({"error": "Stats not available yet"}), 503
+
+     # Calculate the interpolated current views
+     interpolated_views = calculate_current_views(
+         stats_cache["previous_views"],
+         stats_cache["current_views"],
+         stats_cache["last_updated"]
+     )
+
+     return jsonify({
+         "start_views": stats_cache["previous_views"],
+         "end_views": stats_cache["current_views"],
+         "current_views": interpolated_views,
+         "last_updated": stats_cache["last_updated"],
+         "uploads": stats_cache["uploads"]
+     })
 
 if __name__ == "__main__":
-    app.run(debug=False)
+   app.run(debug=False)
