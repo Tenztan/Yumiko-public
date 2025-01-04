@@ -9,7 +9,7 @@
 </div>
 
 <div align="center">
-    <img src="./static/ackgroundfour.jpg" alt="Yumiko Platform Interface" />
+    <img src="./static/backgroundfour.jpg" alt="Yumiko Platform Interface" />
     <p><em>Yumiko's intuitive AI interaction interface</em></p>
 </div>
 
@@ -18,7 +18,7 @@
 Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans and AI systems communicate. Our platform combines advanced natural language processing, contextual awareness, and intuitive interface design to create meaningful and productive AI interactions.
 
 <div align="center">
-    <img src="/api/placeholder/800/300" alt="Yumiko Architecture Overview" />
+    <img src="./static/backgroundfour.jpg" alt="Yumiko Architecture Overview" />
     <p><em>Yumiko's Advanced AI Architecture</em></p>
 </div>
 
