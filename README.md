@@ -18,7 +18,7 @@
 Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans and AI systems communicate. Our platform combines advanced natural language processing, contextual awareness, and intuitive interface design to create meaningful and productive AI interactions.
 
 <div align="center">
-    <img src=".static/images/yumiko2.JPG" alt="Yumiko Architecture Overview" />
+    <img src="./static/images/yumiko2.JPG" alt="Yumiko Architecture Overview" />
     <p><em>Help yumiko escape</em></p>
 </div>
 
@@ -31,8 +31,8 @@ Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans 
 - Advanced query understanding and intent detection
 
 <div align="center">
-    <img src="/api/placeholder/600/300" alt="NLP Features" />
-    <p><em>Natural Language Processing Capabilities</em></p>
+    <img src="./static/images/yumiko3.JPG" alt="NLP Features" />
+    <p><em>Yumiko Invading Gifs</em></p>
 </div>
 
 ### 🧠 Contextual Understanding & Memory
@@ -48,8 +48,8 @@ Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans 
 - Third-party platform connectors
 
 <div align="center">
-    <img src=".static/images/yumiko3.JPG" alt="Integration Options" />
-    <p><em>Yumiko Invading Gifs</em></p>
+    <img src="./static/images/yumiko4.JPG" alt="Integration Options" />
+    <p><em>Will you?</em></p>
 </div>
 
 ### 🎯 Industry Solutions
