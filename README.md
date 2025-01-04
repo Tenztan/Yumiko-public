@@ -9,7 +9,7 @@
 </div>
 
 <div align="center">
-    <img src=".static/images/yumiko1.JPG" alt="Yumiko Platform Interface" />
+    <img src=".static/yumiko1.JPG" alt="Yumiko Platform Interface" />
     <p><em>Yumiko's intuitive AI interaction interface</em></p>
 </div>
 
