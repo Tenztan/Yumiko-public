@@ -121,6 +121,76 @@ Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans 
     <p><em>Enterprise-Grade Security</em></p>
 </div>
 
+
+[Previous sections remain the same until the Overview...]
+
+## 📸 Platform Overview
+
+<div align="center">
+    <img src="./static/images/hero-banner.png" alt="Yumiko AI Platform" width="100%" />
+    <p><em>Yumiko - Next Generation AI Interaction Platform</em></p>
+</div>
+
+## 🎯 Feature Gallery
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 20px 0;">
+    <div>
+        <img src="./static/images/dashboard.png" alt="AI Dashboard" width="100%" />
+        <p align="center"><em>Intuitive AI Dashboard</em></p>
+    </div>
+    <div>
+        <img src="./static/images/chat-interface.png" alt="Chat Interface" width="100%" />
+        <p align="center"><em>Advanced Chat Interface</em></p>
+    </div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 20px 0;">
+    <div>
+        <img src="./static/images/nlp-features.png" alt="NLP Capabilities" width="100%" />
+        <p align="center"><em>Natural Language Processing</em></p>
+    </div>
+    <div>
+        <img src="./static/images/analytics.png" alt="Analytics Dashboard" width="100%" />
+        <p align="center"><em>Real-time Analytics</em></p>
+    </div>
+    <div>
+        <img src="./static/images/integration.png" alt="Integration Options" width="100%" />
+        <p align="center"><em>Seamless Integrations</em></p>
+    </div>
+</div>
+
+## 💡 Key Features Showcase
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 20px 0;">
+    <div>
+        <img src="./static/images/contextual-ai.png" alt="Contextual AI" width="100%" />
+        <p align="center"><em>Contextual Understanding</em></p>
+    </div>
+    <div>
+        <img src="./static/images/security.png" alt="Security Features" width="100%" />
+        <p align="center"><em>Enterprise-grade Security</em></p>
+    </div>
+</div>
+
+## 🌐 Interface Previews
+
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
+    <div>
+        <img src="./static/images/mobile-view.png" alt="Mobile Interface" width="100%" />
+        <p align="center"><em>Mobile Experience</em></p>
+    </div>
+    <div>
+        <img src="./static/images/tablet-view.png" alt="Tablet Interface" width="100%" />
+        <p align="center"><em>Tablet Experience</em></p>
+    </div>
+    <div>
+        <img src="./static/images/desktop-view.png" alt="Desktop Interface" width="100%" />
+        <p align="center"><em>Desktop Experience</em></p>
+    </div>
+</div>
+
+[Rest of the README content remains the same...]
+
 ## 📊 Analytics & Reporting
 
 - Real-time usage metrics
