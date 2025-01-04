@@ -1,0 +1,518 @@
+/* Base styles */
+body {
+    font-family: 'Inconsolata', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #000;
+    overflow: hidden;
+    color: #fff;
+}
+
+/* Chat container styling */
+#chat-container {
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh;
+    max-height: 1000px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    animation: chatContainerEntry 3.5s cubic-bezier(0.16, 1, 0.3, 1);
+    animation-fill-mode: forwards;
+    position: relative;
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Inconsolata', monospace;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+
+}
+
+h1 span {
+    transition: .5s linear;
+}
+
+h1:hover span:nth-child(1) {
+    margin-right: 5px;
+}
+
+h1:hover span:nth-child(1):after {
+    content: "'";
+}
+
+h1:hover span:nth-child(2) {
+    margin-left: 30px;
+}
+
+h1:hover span {
+    color: #fff;
+    text-shadow: 0 0 10px #fff,
+                 0 0 20px #fff,
+                 0 0 40px #fff;
+}
+
+/* Chat box styling */
+#chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.input-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+#loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #111;
+      color: #8a8580;
+      font-family: Consolas, Courier, monospace;
+      font-size: 60px;
+      text-shadow: 0 0 15px #411;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999; /* Ensure it's on top of everything */
+
+    }
+
+    .glow {
+      color: white;
+      text-shadow: 0px 0px 10px #fff;
+    }
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Ensures the canvas is behind other content */
+    }
+
+    /* Ensure the chat container and other elements are on top of the canvas */
+    #chat-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    span {
+      display: inline-block;
+      padding: 0 10px;
+    }
+
+    /* Main content styles */
+    #chat-container {
+      visibility: hidden; /* Hide content until loading is complete */
+    }
+    .loader {
+  position: relative;
+  top:5%;
+  left: 50%;
+  width: 300px;
+  color: #ebe9e8;
+  text-align: left;
+  font-size: 40px;
+  font-family: Roboto Mono;
+  font-weight: 700;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+  &:after {
+    content:'_';
+  }
+}
+.mast {
+
+      position: absolute;
+      display: flex;
+      align-items: center;
+      width: 60%;
+      height: 90vh;
+      color: #fff;
+      background-color: #111;
+      background-size: cover;
+      background-position: 50%;
+      background-image: url('https://unsplash.it/1800/800?image=893');
+      backdrop-filter: blur(10px);
+      z-index: -1;
+    }
+
+/* Message input area styling */
+#user-input {
+    flex-grow: 1;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.08);
+    outline: none;
+    transition: all 0.3s ease;
+    min-width: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-family: 'Inconsolata', monospace;
+}
+
+#user-input:focus {
+    border-color:  #ebe9e8;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+#attachment-button,
+#send-button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 15px;
+    padding: 12px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    font-family: 'Inconsolata', monospace;
+}
+
+#attachment-button:hover,
+#send-button:hover {
+    background-color: #ccc;
+    transform: scale(1.05);
+}
+
+/* Chat message styling */
+.chat-message {
+    white-space: pre-wrap; /* Ensure text wraps and breaks lines */
+    word-wrap: break-word; /* Ensure text wraps within the container */
+    margin-bottom: 15px;
+    padding: 12px 18px;
+    border-radius: 15px;
+    max-width: 85%;
+    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.chat-message:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.15);
+}
+
+.bot-message {
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-right: auto;
+    color: #cfcbc8;
+}
+
+.user-message {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    margin-left: auto;
+    text-align: right;
+}
+
+/* Animation for messages */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar styling */
+#chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-box::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+#chat-box::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+.btn-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    color: #ffffff; /* White text */
+    font-family: 'Courier New', monospace; /* Monospace font for techy feel */
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 1px solid #555; /* Subtle border to match theme */
+    border-radius: 3px; /* Slightly rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+
+.btn-back:hover {
+    background-color:  #cfcbc8; /* White background on hover */
+    color: #000000; /* Black text on hover */
+    border-color:  #cfcbc8; /* White border on hover */
+}
+
+.log-back {
+    position: relative;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    color: #ffffff; /* White text */
+    font-family: 'Courier New', monospace; /* Monospace font for techy feel */
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 1px solid #555; /* Subtle border to match theme */
+    border-radius: 3px; /* Slightly rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+.log-back:hover {
+    background-color:  #cfcbc8; /* White background on hover */
+    color: #000000; /* Black text on hover */
+    border-color:  #cfcbc8; /* White border on hover */
+}
+
+@media (max-width: 768px) {
+    #chat-container {
+        width: 90%;
+        height: 100vh; /* Full viewport height */
+        padding: 15px;
+        border-radius: 0; /* Remove border radius on mobile */
+        display: flex;
+        flex-direction: column;
+    }
+
+    #chat-box {
+        flex: 1;
+        padding: 10px;
+        margin: 10px 0 60px 0; /* Add bottom margin to ensure messages aren't hidden */
+        overflow-y: auto;
+    }
+
+    .input-area {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        z-index: 100;
+    }
+
+    #user-input {
+        padding: 10px;
+        font-size: 14px; /* Slightly larger for better tap targets */
+    }
+
+    .loader {
+  position: relative;
+  top:5%;
+  width: 300px;
+  color: #ebe9e8;
+  text-align: center;
+  font-size: 30px;
+
+  }
+
+    /* Adjust for iPhone X and similar devices with bottom bar */
+    @supports (padding: max(0px)) {
+        .input-area {
+            padding-bottom: max(10px, env(safe-area-inset-bottom));
+        }
+    }
+
+    /* Handle keyboard appearance */
+    @media (max-height: 400px) {
+        #chat-container {
+            height: 100%;
+        }
+
+        #chat-box {
+            margin-bottom: 70px; /* Increased bottom margin when keyboard is visible */
+        }
+    }
+}
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #chat-container {
+        height: 80vh;
+        padding: 10px;
+        border-radius: 8px;
+    }
+.loader {
+  position: relative;
+  top:5%;
+  width: 300px;
+  color: #ebe9e8;
+  text-align: center;
+  font-size: 30px;
+
+  }
+    #chat-box {
+        padding: 8px;
+        margin: 20px 0;
+    }
+
+    .chat-message {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+        max-width: 75%;
+    }
+
+    #user-input {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    #attachment-button,
+    #send-button {
+        padding: 8px;
+        font-size: 0.8rem;
+        border-radius: 8px;
+    }
+
+    .btn-back {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}
+
+
+
+.typing-indicator {
+    display: flex;
+    align-items: center;
+}
+
+.typing-indicator-bubble {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+}
+
+.typing-indicator-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #cfcbc8;
+    border-radius: 50%;
+    margin: 0 2px;
+    animation: typingBounce 1.4s infinite;
+    opacity: 0.7;
+}
+
+.typing-indicator-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-4px);
+    }
+}
+
+/* Special prompt styling - dark theme */
+.special-prompt {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-left: 4px solid #cfcbc8;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.special-prompt:hover {
+    transform: translateX(2px);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.15);
+}
+
+/* Button container */
+.account-prompt-buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Common button styles */
+.account-prompt-buttons .btn {
+    padding: 12px 18px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-family: 'Inconsolata', monospace;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+/* Primary button */
+.btn-primary {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #cfcbc8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Secondary button */
+.btn-secondary {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: 1px solid #cfcbc8;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(207, 203, 200, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}

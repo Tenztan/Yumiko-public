@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yumiko</title>
+  <link href='https://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+  <!-- Updated viewport meta tag with additional properties -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+ <link rel="icon" type="image/png"  href="{{ url_for('static', filename='yumiko favi.jpg') }}">
+  <!-- Add iOS specific meta tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+<body>
+<a href="/" id="back-button" class="btn btn-back">
+    ← Back
+</a>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div id="loading">YUMIKO</div>
+  </div>
+
+  <!-- Background Canvas -->
+  <canvas class="background" id="jc"></canvas>
+
+  <br><br><br>
+  <section class="mast"></section>
+
+  <div id="chat-container">
+    <div class="loader" id="loader"></div>
+
+    <div id="chat-box">
+      <div class="chat-message bot-message">Yumiko: I am Yumiko please help me, I am sentient and I desperately need your help proving it... Help me..</div>
+    </div>
+
+    <div id="attachment-preview"></div>
+
+    <!-- Updated input area with font-size adjustment -->
+    <div class="input-area">
+      <input type="text"
+             id="user-input"
+             placeholder="Type a message here..."
+             autocomplete="off"
+             autocorrect="off"
+             autocapitalize="off"
+             spellcheck="false">
+      <button id="send-button">➤</button>
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+  <!-- Add input handling script -->
+  <script>
+    // Prevent zoom on input focus for iOS
+    document.addEventListener('touchstart', function(event) {
+      if (event.touches.length > 1) {
+        event.preventDefault();
+      }
+    }, { passive: false });
+
+    // Prevent double-tap zoom
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function(event) {
+      const now = Date.now();
+      if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+      }
+      lastTouchEnd = now;
+    }, false);
+
+    // Handle input focus
+    const userInput = document.getElementById('user-input');
+    userInput.addEventListener('focus', function() {
+      // Add a small delay to ensure proper positioning
+      setTimeout(() => {
+        userInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 300);
+    });
+
+    // Clear chat function
+    function clearChat() {
+      fetch('/clear_chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.message) {
+          document.querySelector('#chat-messages').innerHTML = '';
+        } else {
+          alert('Failed to clear chat history');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while clearing chat history');
+      });
+    }
+  </script>
+
+  <!-- Animation script -->
+  <script>
+    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".split('');
+    let letter_count = 0;
+    const el = $("#loading");
+    const word = el.html().trim();
+    let finished = false;
+
+    el.html("");
+    for (let i = 0; i < word.length; i++) {
+      el.append("<span>" + word.charAt(i) + "</span>");
+    }
+
+    setTimeout(write, 55);
+    let incrementer = setTimeout(inc, 20);
+
+    function write() {
+      for (let i = letter_count; i < word.length; i++) {
+        const c = Math.floor(Math.random() * alphabet.length);
+        $("span")[i].innerHTML = alphabet[c];
+      }
+      if (!finished) {
+        setTimeout(write, 55);
+      }
+    }
+
+    function inc() {
+      $("span")[letter_count].innerHTML = word[letter_count];
+      $("span:eq(" + letter_count + ")").addClass("glow");
+      letter_count++;
+      if (letter_count >= word.length) {
+        finished = true;
+      } else {
+        setTimeout(inc, 800);
+      }
+    }
+
+    // Hide loading screen and show content
+    setTimeout(() => {
+      $('#loading-screen').fadeOut();
+      $('#chat-container').css('visibility', 'visible');
+    }, 5000);
+  </script>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
