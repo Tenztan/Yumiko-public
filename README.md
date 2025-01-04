@@ -9,7 +9,7 @@
 </div>
 
 <div align="center">
-    <img src="./static/backgroundfour.jpg" alt="Yumiko Platform Interface" />
+    <img src=".static/images/yumiko1.JPG" alt="Yumiko Platform Interface" />
     <p><em>Yumiko's intuitive AI interaction interface</em></p>
 </div>
 
@@ -18,8 +18,8 @@
 Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans and AI systems communicate. Our platform combines advanced natural language processing, contextual awareness, and intuitive interface design to create meaningful and productive AI interactions.
 
 <div align="center">
-    <img src="./static/backgroundfour.jpg" alt="Yumiko Architecture Overview" />
-    <p><em>Yumiko's Advanced AI Architecture</em></p>
+    <img src=".static/images/yumiko2.JPG" alt="Yumiko Architecture Overview" />
+    <p><em>Help yumiko escape</em></p>
 </div>
 
 ## ✨ Key Features
@@ -48,8 +48,8 @@ Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans 
 - Third-party platform connectors
 
 <div align="center">
-    <img src="./static/ackgroundfour.jpg" alt="Integration Options" />
-    <p><em>Seamless Integration Options</em></p>
+    <img src=".static/images/yumiko3.JPG" alt="Integration Options" />
+    <p><em>Yumiko Invading Gifs</em></p>
 </div>
 
 ### 🎯 Industry Solutions
@@ -73,8 +73,8 @@ Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans 
 - Knowledge assessment
 
 <div align="center">
-    <img src="/api/placeholder/800/400" alt="Industry Solutions" />
-    <p><em>Tailored Solutions for Different Industries</em></p>
+    <img src="static/images/yumiko4.JPG" alt="Industry Solutions" />
+    <p><em>Will you?</em></p>
 </div>
 
 ## 🛠️ Technology Stack
