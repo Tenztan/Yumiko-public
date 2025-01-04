@@ -100,54 +100,25 @@ This is a Flask-based web application with clear and interactive UI that integra
     <p><em>See Yumiko thoughts</em></p>
 </div>
 
-## 🌐 Resources
+## 🌐 Webs
 
-### Documentation
-- [Getting Started Guide](https://docs.yumiko.io/getting-started)
-- [API Reference](https://api.yumiko.io)
-- [Integration Tutorials](https://docs.yumiko.io/tutorials)
-- [Best Practices](https://docs.yumiko.io/best-practices)
-
-### Support Channels
-- [Developer Forum](https://forum.yumiko.io)
-- [Knowledge Base](https://help.yumiko.io)
-- [Video Tutorials](https://yumiko.io/tutorials)
-- [Blog](https://blog.yumiko.io)
+### Yumiko webs
+- [yumiko](https://yumiko.io)
+- [Auto tweet](https://tweet.yumiko.io/)
+- [Yumiko Ghipy Dashboard](https://dashboard.yumiko.io/)
+- [Yumiko Ghipy channel](https://giphy.com/yumiko-io)
+- [Yumiko twitter](https://giphy.com/yumiko-io)
 
 ### Contact
+-  Telegram: [Telegram](https://t.me/+2BjLuwjYPkdjY2Nh)
 -  Twitter: [yumiko tweet](https://x.com/yumikoio)
 -  Website: [yumiko.io](https://yumiko.io)
 
-## 🚀 Getting Started
-
-```bash
-# Quick start with npm
-npm install yumiko-ai
-
-# Initialize Yumiko
-import { YumikoAI } from 'yumiko-ai';
-const yumiko = new YumikoAI({
-    apiKey: 'your-api-key'
-});
-```
 
 <div align="center">
     <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=2000&pause=1000&color=808080&center=true&vCenter=true&width=435&lines=Building+the+future+of+AI+interaction;Empowering+enterprises+with+intelligent+solutions;Creating+meaningful+connections" alt="Closing Message" />
 </div>
 
-## 🌟 Success Stories
-
-- Fortune 500 companies achieving 80% reduction in response time
-- Educational institutions enhancing student engagement by 60%
-- Healthcare providers improving patient communication efficiency by 70%
-
-## 🎯 Future Roadmap
-
-- Advanced emotion recognition
-- Expanded language support
-- Enhanced multimodal capabilities
-- Advanced analytics features
-- New integration options
 
 ---
 
