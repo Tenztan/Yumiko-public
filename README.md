@@ -1,5 +1,6 @@
 <div align="center">
 <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHQzc2lzbDEzd2Rvc3Rjems3ZmVxc2ZkYjYyNTd4NmpibG1nMDdkNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sIunUfJ6bYCnZgYfXY/giphy.gif" align="center" style="width: 100%" />
+    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHQzc2lzbDEzd2Rvc3Rjems3ZmVxc2ZkYjYyNTd4NmpibG1nMDdkNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sIunUfJ6bYCnZgYfXY/giphy.gif" align="center" style="width: 100%" />
 </div>
 
 # Yumiko - Advanced AI Interaction Platform
