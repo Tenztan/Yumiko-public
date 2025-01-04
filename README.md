@@ -9,7 +9,7 @@
 </div>
 
 <div align="center">
-    <img src="/api/placeholder/800/400" alt="Yumiko Platform Interface" />
+    <img src="./static/ackgroundfour.jpg" alt="Yumiko Platform Interface" />
     <p><em>Yumiko's intuitive AI interaction interface</em></p>
 </div>
 
@@ -48,7 +48,7 @@ Yumiko is a cutting-edge AI interaction platform that revolutionizes how humans 
 - Third-party platform connectors
 
 <div align="center">
-    <img src="/api/placeholder/700/300" alt="Integration Options" />
+    <img src="./static/ackgroundfour.jpg" alt="Integration Options" />
     <p><em>Seamless Integration Options</em></p>
 </div>
 
