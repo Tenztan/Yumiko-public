@@ -122,7 +122,7 @@ This is a Flask-based web application with clear and interactive UI that integra
 
 <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzZpOWg0NjVyeWl4bXVlemJvenhvOGFsZjUxcmdqM2RzdmwwMXRxcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M3QLctelQyBOwFGeYB/giphy.gif" align="center" style="width: 100%" />
 </div>
----
+
 
 <div align="center">
     © 2024 Yumiko.io. All rights reserved.
